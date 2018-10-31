@@ -1,0 +1,14 @@
+#!/usr/bin/with-contenv bash
+
+# permissions
+chown -R abc:abc \
+	/config-radarr \
+	/opt
+
+# cleanup pid if it exists
+[[ -e /config-sonarr/nzbdrone.pid ]] && \
+	rm -rf /config-sonarr/nzbdrone.pid
+
+# permissions
+chown -R abc:abc \
+	/opt/NzbDrone
